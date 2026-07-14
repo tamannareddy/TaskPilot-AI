@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TaskPilot</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="background-glow"></div>
+
+    <main class="container">
+
+        <div class="logo">
+
+            <div class="logo-circle">
+                ⚡
+            </div>
+
+            <h1>TaskPilot</h1>
+
+        </div>
+
+        <h2>Your AI Calendar Assistant</h2>
+
+        <p class="description">
+
+            Capture messy thoughts and instantly organize them into your Google Calendar using AI.
+
+        </p>
+
+        <textarea
+            id="note"
+            placeholder="What's on your mind?
+
+Examples:
+• Physics viva tomorrow 10am
+• Call Rahul tonight
+• Submit assignment Friday afternoon"></textarea>
+
+        <button id="addBtn">
+
+            ⚡ Add to Calendar
+
+        </button>
+
+        <div id="loading" class="spinner hidden"></div>
+
+        <div id="successCard" class="success-card hidden">
+
+            <h3>✅ Event Added Successfully</h3>
+
+            <p>
+
+                Your event has been created in Google Calendar.
+
+            </p>
+
+            <a
+                id="calendarLink"
+                target="_blank">
+
+                Open Google Calendar →
+
+            </a>
+
+        </div>
+
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
