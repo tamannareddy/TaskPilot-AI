@@ -3,7 +3,5 @@ __pycache__/
 *.pyc
 
 .env
-token.json
 credentials.json
-
-.vscode/
+token.json
