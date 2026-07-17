@@ -1,30 +1,33 @@
-# ⚡ TaskPilot
+# ⚡ TaskPilot AI
 
-Turn messy thoughts into Google Calendar events using AI.
+An AI-powered calendar assistant that converts natural language into Google Calendar events using **Google Gemini AI**.
 
-Example:
+---
 
-```
-"Physics viva tomorrow 10am"
-```
+## 🚀 Example
 
-↓
+**Input**
 
-Gemini understands it.
+> "Physics viva tomorrow at 10 AM"
 
-↓
+⬇️
 
-Google Calendar event is created automatically.
+🧠 Gemini understands the event details.
+
+⬇️
+
+📅 A Google Calendar event is created automatically.
 
 ---
 
 ## ✨ Features
 
-- 🧠 Natural language understanding
+- 🧠 Natural language event extraction
 - 📅 Google Calendar integration
+- 🔐 Secure Google OAuth authentication
 - ⚡ One-click event creation
-- 🎨 Modern Flask web interface
-- 🤖 Powered by Gemini AI
+- 🎨 Clean and responsive Flask web interface
+- 🤖 Powered by Google Gemini AI
 
 ---
 
@@ -40,25 +43,42 @@ Google Calendar event is created automatically.
 
 ---
 
-## 🚀 Getting Started
+## 📂 Project Structure
 
-```bash
-git clone https://github.com/tamannareddy/Taskpilot-AI.git
+```
+TaskPilot-AI/
+│── static/
+│── templates/
+│── app.py
+│── ai_parser.py
+│── calendar_utils.py
+│── requirements.txt
+│── README.md
 ```
 
-Install dependencies
+---
+
+## 🚀 Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/tamannareddy/TaskPilot-AI.git
+```
+
+Install dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Create a `.env`
+Create a `.env` file:
 
 ```env
 GEMINI_API_KEY=YOUR_API_KEY
 ```
 
-Run
+Run the application:
 
 ```bash
 python app.py
@@ -66,13 +86,18 @@ python app.py
 
 ---
 
-## 📌 Future Improvements
+## 🔮 Future Improvements
 
-- WhatsApp integration
-- Smart scheduling
-- Reminder notifications
-- Productivity dashboard
+- 📱 WhatsApp integration
+- 🤖 Smart scheduling
+- 🔔 Reminder notifications
+- 📊 Productivity dashboard
+- 🎤 Voice input support
 
 ---
 
-Built by **Tamanna Reddy** 
+## 👩‍💻 Author
+
+**Tamanna Reddy**
+
+If you found this project interesting, consider giving it a ⭐.

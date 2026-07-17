@@ -1,4 +1,5 @@
 from google.oauth2.credentials import Credentials
+from google.auth.transport.requests import Request
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 
@@ -7,23 +8,39 @@ import os
 
 SCOPES = ["https://www.googleapis.com/auth/calendar"]
 
+
 def get_calendar_service():
     creds = None
 
     if os.path.exists("token.json"):
-        creds = Credentials.from_authorized_user_file("token.json", SCOPES)
+        creds = Credentials.from_authorized_user_file(
+            "token.json",
+            SCOPES
+        )
 
-    if not creds or not creds.valid:
-        flow = InstalledAppFlow.from_client_secrets_file("credentials.json", SCOPES)
+    if creds and creds.expired and creds.refresh_token:
+        creds.refresh(Request())
+
+    elif not creds or not creds.valid:
+        flow = InstalledAppFlow.from_client_secrets_file(
+            "credentials.json",
+            SCOPES
+        )
+
         creds = flow.run_local_server(port=0)
+
         with open("token.json", "w") as token:
             token.write(creds.to_json())
 
-    service = build("calendar", "v3", credentials=creds)
-    return service
+    return build("calendar", "v3", credentials=creds)
+
 
 def create_event(service, event_data):
-    start = datetime.fromisoformat(f"{event_data['date']}T{event_data['time']}:00")
+
+    start = datetime.fromisoformat(
+        f"{event_data['date']}T{event_data['time']}:00"
+    )
+
     end = start + timedelta(hours=1)
 
     event = {
@@ -38,5 +55,9 @@ def create_event(service, event_data):
         }
     }
 
-    created_event = service.events().insert(calendarId="primary", body=event).execute()
+    created_event = service.events().insert(
+        calendarId="primary",
+        body=event
+    ).execute()
+
     return created_event
