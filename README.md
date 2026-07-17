@@ -20,6 +20,16 @@ An AI-powered calendar assistant that converts natural language into Google Cale
 
 ---
 
+## 📸 Screenshots
+
+### TaskPilot Interface
+
+![TaskPilot Home](screenshots/home.png)
+
+### Google Calendar Event
+
+![Google Calendar Event](screenshots/calendar.png)
+
 ## ✨ Features
 
 - 🧠 Natural language event extraction
