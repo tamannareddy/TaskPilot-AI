@@ -28,7 +28,7 @@ An AI-powered calendar assistant that converts natural language into Google Cale
 
 ### Google Calendar Event
 
-![Google Calendar Event](screenshots/calendar.png)
+![Google Calendar Event](screenshots/events.png)
 
 ## ✨ Features
 
